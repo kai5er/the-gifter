@@ -36,14 +36,30 @@ client.itemSearch({
      //  console.dir(JSON.stringify(results[56]));
       //console.dir(JSON.stringify(results[16]));
      
+     var image = false;
+     var images = {
+        LargeImage:false,
+        MediumImage:false,
+        SmallImage:false
+     };
+     for(var prop in images)
+     {
+      if(results[num][prop][0])
+      {
+        images[prop] = results[num][prop][0];
+        image = images[prop];
+        break;
+      }
+     }
+
+     console.log(image ? image : "there is no frikken image");
+
+     /*
+
       console.log(results[num].LargeImage);
      
-      console.dir(JSON.stringify( results[32]));
-      
-
- 
-      
-    
+      console.dir(JSON.stringify( results[32])); 
+      */  
   }
 });
 
